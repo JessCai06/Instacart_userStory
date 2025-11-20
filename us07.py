@@ -20,8 +20,8 @@ RETURNS trigger
 LANGUAGE plpgsql AS
 $$
 BEGIN
-  IF (old.batch_status != 'Delivered' && new.batch_status == 'Delivered') THEN
-    UPDATE Order
+  IF (old.batch_status != 'Delivered' AND new.batch_status == 'Delivered') THEN
+    UPDATE "Order"
        SET order_status = 'Delivered'
      WHERE batch_id = new.batch_id;
   END IF;
@@ -31,7 +31,7 @@ $$;
 
 
 CREATE TRIGGER tr_update_order_status
-AFTER UPDATE OF batch_status ON Batch
+AFTER UPDATE OF batch_status ON "Batch"
 FOR EACH ROW
 EXECUTE FUNCTION fn_update_order_status();
 '''
@@ -41,7 +41,7 @@ EXECUTE FUNCTION fn_update_order_status();
     cmd = cur.mogrify(tmpl, ())
     print_cmd(cmd)
     cur.execute(cmd)
-    rows = cur.fetchall()
+    # rows = cur.fetchall()
     # pp(rows)
     # show_table( rows, cols )
 
