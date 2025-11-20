@@ -1,32 +1,48 @@
 from common import *
 
 us='''
-* Simple US
+* Simple US07: Update Order Delivery Status
 
-   As a:  Manager
- I want:  To see all the unresolved bugs
-So That:  I can see what needs to be addressed
+   As a:  Shopper
+ I want:  I want to be able to update the delivery status of my assigned orders (e.g., “picked up,” “in transit,” “delivered”)
+So that customers can track real-time progress of their grocery deliver
+simple
+So That:  operational
 '''
 
 print(us)
 
-def list_unresolved_bugs():
+def update_delivery_status():
+    
+    tmpl = f'''
+CREATE FUNCTION fn_update_order_status()
+RETURNS trigger
+LANGUAGE plpgsql AS
+$$
+BEGIN
+  IF (old.batch_status != 'Delivered' && new.batch_status == 'Delivered') THEN
+    UPDATE Order
+       SET order_status = 'Delivered'
+     WHERE batch_id = new.batch_id;
+  END IF;
+RETURN null;
+END;
+$$;
 
-    cols = 'b.bid b.severity i.initial_date i.product i.status i.priority u.uid u.name u.role'
 
-    tmpl =  f'''
-SELECT {c(cols)}
-  FROM Bugs as b
-       JOIN Issues as i ON b.bid = i.iid
-       JOIN Users as u ON i.uid = u.uid
- WHERE i.status <> 'resolved'
- ORDER BY b.severity DESC    
+CREATE TRIGGER tr_update_order_status
+AFTER UPDATE OF batch_status ON Batch
+FOR EACH ROW
+EXECUTE FUNCTION fn_update_order_status();
 '''
+    
+
+
     cmd = cur.mogrify(tmpl, ())
     print_cmd(cmd)
     cur.execute(cmd)
     rows = cur.fetchall()
     # pp(rows)
-    show_table( rows, cols )
+    # show_table( rows, cols )
 
-list_unresolved_bugs()    
+update_delivery_status()    
