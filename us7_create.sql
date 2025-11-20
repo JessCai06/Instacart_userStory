@@ -1,7 +1,11 @@
 -- Created by Redgate Data Modeler (https://datamodeler.redgate-platform.com)
 -- Last modification date: 2025-11-20 20:37:21.723
 
-
+DROP TABLE IF EXISTS Batch;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS Retail;
+DROP TABLE IF EXISTS Store;
+DROP TABLE IF EXISTS Shopper;
 
 -- tables
 -- Table: Batch
