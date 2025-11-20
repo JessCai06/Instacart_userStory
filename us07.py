@@ -15,13 +15,13 @@ print(us)
 def update_delivery_status():
     
     tmpl = f'''
-CREATE FUNCTION fn_update_order_status()
+CREATE FUNCTION fn_update_order_status ()
 RETURNS trigger
 LANGUAGE plpgsql AS
 $$
 BEGIN
-  IF (old.batch_status != 'Delivered' AND new.batch_status == 'Delivered') THEN
-    UPDATE "Order"
+  IF (old.batch_status != 'Delivered' AND new.batch_status = 'Delivered') THEN
+    UPDATE "order"
        SET order_status = 'Delivered'
      WHERE batch_id = new.batch_id;
   END IF;
@@ -31,9 +31,9 @@ $$;
 
 
 CREATE TRIGGER tr_update_order_status
-AFTER UPDATE OF batch_status ON "Batch"
+AFTER UPDATE OF batch_status ON "batch"
 FOR EACH ROW
-EXECUTE FUNCTION fn_update_order_status();
+EXECUTE FUNCTION fn_update_order_status ();
 '''
     
 
