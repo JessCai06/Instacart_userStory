@@ -20,9 +20,9 @@ CREATE TYPE Shopping_Status AS ENUM('Available', 'Shopping', 'On_break');
 
 -- load the data
 
-\copy Users(uid, name, role) FROM data/users.csv csv header;
-\copy Issues(iid, initial_date, product, status, priority, uid, message) FROM data/issues.csv csv header;
-\copy Bugs(bid, severity) FROM data/bugs.csv csv header;
-\copy Features(fid, votes) FROM data/features.csv csv header;
-\copy Comments(cid, date, iid, uid, comment) FROM data/comments.csv csv header;
+\copy Batch(batch_id, batch_status, shopper_id) FROM batch.csv csv header;
+\copy Order(order_id, tips, order_fee, order_status, store_id, batch_id) FROM order.csv csv header;
+\copy Shopper(shopper_id, shopping_status) FROM shopper.csv csv header;
+\copy Store(store_id, location, retail_id) FROM store.csv csv header;
+\copy Retail(retail_id, name) FROM retail.csv csv header;
 
