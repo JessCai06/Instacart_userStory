@@ -13,8 +13,9 @@ DROP IF EXISTS Batch_Status
 DROP IF EXISTS Shopping_Status
 
 CREATE TYPE Order_Status AS ENUM('Issued', 'Assigned', 'Picked_up', 'Delivered');
-CREATE TYPE Batch_Status AS ENUM ('Picked_up', 'Delivered');
-CREATE TYPE Shopping_Status AS ENUM('In_store', 'Checked_out');
+CREATE TYPE Batch_Status AS ENUM ('Unassigned','Assigned', 'In_progress', 'Completed', 'Cancelled');
+-- better to revise shopping status to "shopper availability" status
+CREATE TYPE Shopping_Status AS ENUM('Available', 'Shopping', 'On_break');
 
 
 -- load the data

@@ -1,5 +1,6 @@
 batch_id,batch_status,shopper_id
-301,assigned,201
-302,in_progress,202
-303,completed,201
-304,cancelled,203
+301,Assigned,201
+302,In_progress,202
+303,Completed,201
+304,Cancelled,203
+305,Assigned,204

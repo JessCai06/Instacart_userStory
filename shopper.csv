@@ -1,7 +1,7 @@
 shopper_id,shopping_status
-201,available
-202,shopping
-203,on_break
-204,available
-205,shopping
-206,available
+201,Available
+202,Shopping
+203,On_break
+204,Available
+205,Shopping
+206,Available
