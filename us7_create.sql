@@ -13,20 +13,20 @@ CREATE TABLE Batch (
 );
 
 -- Table: Order
-CREATE TABLE "Order" (
+CREATE TABLE orders (
     order_id int  NOT NULL,
     tips money  NOT NULL,
     order_fee money  NOT NULL,
     order_status Order_Status,
     store_id int  NOT NULL,
     batch_id int  NOT NULL,
-    CONSTRAINT Order_pk PRIMARY KEY (order_id)
+    CONSTRAINT orders_pk PRIMARY KEY (order_id)
 );
 
 -- Table: Retail
 CREATE TABLE Retail (
     retail_id int  NOT NULL,
-    name int  NOT NULL,
+    name text  NOT NULL,
     CONSTRAINT Retail_pk PRIMARY KEY (retail_id)
 );
 
@@ -55,7 +55,7 @@ ALTER TABLE Batch ADD CONSTRAINT Batch_Shopper
 ;
 
 -- Reference: Order_Batch (table: Order)
-ALTER TABLE "Order" ADD CONSTRAINT Order_Batch
+ALTER TABLE orders ADD CONSTRAINT Orders_Batch
     FOREIGN KEY (batch_id)
     REFERENCES Batch (batch_id)  
     NOT DEFERRABLE 
@@ -63,7 +63,7 @@ ALTER TABLE "Order" ADD CONSTRAINT Order_Batch
 ;
 
 -- Reference: Order_Store (table: Order)
-ALTER TABLE "Order" ADD CONSTRAINT Order_Store
+ALTER TABLE orders ADD CONSTRAINT Orders_Store
     FOREIGN KEY (store_id)
     REFERENCES Store (store_id)  
     NOT DEFERRABLE 
