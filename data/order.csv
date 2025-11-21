@@ -1,5 +1,5 @@
 order_id,tips,order_fee,order_status,store_id,batch_id
-401,5.00,7.99,delivered,101,301
+401,5.00,7.99,issued,101,301
 402,2.50,4.99,delivered,101,301
 403,0.00,9.99,shopping,102,302
 404,3.75,6.99,delivered,103,303

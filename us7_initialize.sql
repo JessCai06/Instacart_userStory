@@ -19,7 +19,6 @@ CREATE TYPE Shopping_Status AS ENUM('Available', 'Shopping', 'On_break');
 \i us7_create.sql
 
 
-
 \copy Retail(retail_id, name) FROM data/retail.csv csv header;
 \copy Shopper(shopper_id, shopping_status) FROM data/shopper.csv csv header;
 \copy Store(store_id, location, retail_id) FROM data/store.csv csv header;
