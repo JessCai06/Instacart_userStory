@@ -2,7 +2,7 @@
 -- Last modification date: 2025-11-20 20:37:21.723
 
 DROP TABLE IF EXISTS Batch;
-DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS Order;
 DROP TABLE IF EXISTS Retail;
 DROP TABLE IF EXISTS Store;
 DROP TABLE IF EXISTS Shopper;
@@ -17,7 +17,7 @@ CREATE TABLE Batch (
 );
 
 -- Table: Order
-CREATE TABLE orders (
+CREATE TABLE Orders (
     order_id int  NOT NULL,
     tips money  NOT NULL,
     order_fee money  NOT NULL,
@@ -59,7 +59,7 @@ ALTER TABLE Batch ADD CONSTRAINT Batch_Shopper
 ;
 
 -- Reference: Order_Batch (table: Order)
-ALTER TABLE orders ADD CONSTRAINT Orders_Batch
+ALTER TABLE Orders ADD CONSTRAINT Orders_Batch
     FOREIGN KEY (batch_id)
     REFERENCES Batch (batch_id)  
     NOT DEFERRABLE 
@@ -67,7 +67,7 @@ ALTER TABLE orders ADD CONSTRAINT Orders_Batch
 ;
 
 -- Reference: Order_Store (table: Order)
-ALTER TABLE orders ADD CONSTRAINT Orders_Store
+ALTER TABLE Orders ADD CONSTRAINT Orders_Store
     FOREIGN KEY (store_id)
     REFERENCES Store (store_id)  
     NOT DEFERRABLE 
