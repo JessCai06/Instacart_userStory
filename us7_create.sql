@@ -1,11 +1,11 @@
 -- Created by Redgate Data Modeler (https://datamodeler.redgate-platform.com)
 -- Last modification date: 2025-11-20 20:37:21.723
 
-DROP TABLE IF EXISTS Batch;
-DROP TABLE IF EXISTS Order;
-DROP TABLE IF EXISTS Retail;
-DROP TABLE IF EXISTS Store;
-DROP TABLE IF EXISTS Shopper;
+DROP TABLE IF EXISTS Batch CASCADE;
+DROP TABLE IF EXISTS orders CASCADE;
+DROP TABLE IF EXISTS Retail CASCADE;
+DROP TABLE IF EXISTS Store CASCADE;
+DROP TABLE IF EXISTS Shopper CASCADE;
 
 -- tables
 -- Table: Batch

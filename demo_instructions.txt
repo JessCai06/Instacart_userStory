@@ -1,0 +1,2 @@
+1. refresh database: psql -d postgres -U isdb -f us7_initialize.sql
+2. go to us07.py, run python file, should show before and after order file (firt row is diff)

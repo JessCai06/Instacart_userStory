@@ -1,48 +1,68 @@
 from common import *
 
-us='''
+us = '''
 * Simple US07: Update Order Delivery Status
 
-   As a Shopper, I want to be able to update the delivery status of my assigned orders (e.g., “picked up,” “in transit,” “delivered”), so that customers can track real-time progress of their grocery deliver. 
+   As a Shopper, I want to be able to update the delivery status of my assigned orders with the batch status, so that customers can track real-time 
+   progress of their grocery delivery.
 '''
 
 print(us)
 
-def update_delivery_status():
-    
-    tmpl = f'''
+def update_delivery_status_trigger():
+    tmpl = b'''
+DROP FUNCTION IF EXISTS fn_update_order_status() CASCADE;
 
-DROP FUNCTION IF EXISTS fn_update_order_status () CASCADE;    
-CREATE FUNCTION fn_update_order_status ()
-RETURNS trigger
+CREATE FUNCTION fn_update_order_status()
+RETURNS TRIGGER
 LANGUAGE plpgsql AS
 $$
 BEGIN
-  IF (old.batch_status != 'Completed' AND new.batch_status = 'Completed') THEN
-    UPDATE Orders
-       SET order_status = 'delivered'
-     WHERE Batch.batch_id = new.batch_id;
-  END IF;
-RETURN null;
+    -- When batch becomes completed, mark related orders as Delivered
+    IF OLD.batch_status <> 'Completed' AND NEW.batch_status = 'Completed' THEN
+        UPDATE orders
+           SET order_status = 'delivered'
+         WHERE batch_id = NEW.batch_id;
+    END IF;
+
+    RETURN NEW;
 END;
 $$;
 
-DROP TRIGGER IF EXISTS tr_update_order_status ON Batch;
+DROP TRIGGER IF EXISTS tr_update_order_status ON batch;
 
 CREATE TRIGGER tr_update_order_status
-AFTER UPDATE OF batch_status ON Batch
+AFTER UPDATE OF batch_status ON batch
 FOR EACH ROW
-EXECUTE FUNCTION fn_update_order_status ();
+EXECUTE FUNCTION fn_update_order_status();
 '''
-    
-
-
-    cmd = cur.mogrify(tmpl, ())
+    cmd = tmpl
     print_cmd(cmd)
     cur.execute(cmd)
-    cur.connection.commit()
-    # rows = cur.fetchall()
-    # pp(rows)
-    # show_table( rows, cols )
 
-update_delivery_status()    
+
+#testing our trigger
+update_delivery_status_trigger()
+
+cols_str = 'order_id tips order_fee order_status store_id batch_id'
+
+print("\n\nBEFORE")
+cur.execute("SELECT * FROM orders ORDER BY order_id;")
+rows_before = cur.fetchall()
+show_table(rows_before, cols_str)
+
+trigcommand = """
+    UPDATE batch
+        SET batch_status = 'Completed'
+      WHERE batch_id = 301;
+"""
+print("trigger we're updating batch to completed")
+# print(trigcommand)
+cur.execute(trigcommand)
+cur.connection.commit()
+
+print("\n\nAFTER")
+cur.execute("SELECT * FROM orders ORDER BY order_id;")
+rows_after = cur.fetchall()
+show_table(rows_after, cols_str)
+
