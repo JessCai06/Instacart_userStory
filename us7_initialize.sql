@@ -12,7 +12,7 @@ DROP TYPE IF EXISTS Order_Status CASCADE;
 DROP TYPE IF EXISTS Batch_Status CASCADE;
 DROP TYPE IF EXISTS Shopping_Status CASCADE;
 
-CREATE TYPE Order_Status AS ENUM('issued', 'assigned', 'picked_up', 'shopping', 'delivered', 'cancelled');
+CREATE TYPE Order_Status AS ENUM('Issued', 'Assigned', 'Picked_up', 'Shopping', 'Delivered', 'Cancelled');
 CREATE TYPE Batch_Status AS ENUM ('Unassigned','Assigned', 'In_progress', 'Completed', 'Cancelled');
 CREATE TYPE Shopping_Status AS ENUM('Available', 'Shopping', 'On_break');
 
