@@ -16,7 +16,7 @@ CREATE TYPE Order_Status AS ENUM('Issued', 'Assigned', 'Picked_up', 'Shopping', 
 CREATE TYPE Batch_Status AS ENUM ('Unassigned','Assigned', 'In_progress', 'Completed', 'Cancelled');
 CREATE TYPE Shopping_Status AS ENUM('Available', 'Shopping', 'On_break');
 
-\i us7_create.sql
+\i create.sql
 
 
 \copy Retail(retail_id, name) FROM data/retail.csv csv header;
