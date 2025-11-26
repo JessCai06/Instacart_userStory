@@ -1,0 +1,5 @@
+bar_code,item_name,category,brand,stock_quantity,shelf_price,aisle,age_restricted,store_id,promo_id
+B1001,Organic Apples,Produce,FreshFarm,120,2.99,A1,FALSE,1,PROMO1
+B1002,Whole Milk 2%,Dairy,MilkyWay,60,3.49,B3,FALSE,1,PROMO0
+B1003,Bourbon Whiskey,Beverages,OakBarrel,25,29.99,E1,TRUE,1,PROMO2
+B1004,Toothpaste,Personal Care,SmileBright,80,4.49,D5,FALSE,2,PROMO0

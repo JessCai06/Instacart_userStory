@@ -1,0 +1,5 @@
+pid,amount,date,payment_method,paying_for,uid
+P1001,9.99,2025-01-01,credit_card,subscription,U001
+P1002,45.50,2025-01-05,debit_card,grocery_order,U001
+P1003,60.00,2025-03-16,credit_card,subscription,U002
+P1004,12.75,2025-04-02,cash,grocery_order,U004

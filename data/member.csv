@@ -1,0 +1,4 @@
+uid,subscription_start,subscription_duration,autopay_on,has_paid
+U001,2025-01-01,12,TRUE,TRUE
+U002,2025-03-15,6,FALSE,TRUE
+U003,2025-05-01,1,TRUE,FALSE

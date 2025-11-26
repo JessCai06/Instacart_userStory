@@ -19,9 +19,9 @@ LANGUAGE plpgsql AS
 $$
 BEGIN
     -- When batch becomes completed, mark related orders as Delivered
-    IF OLD.batch_status <> 'Completed' AND NEW.batch_status = 'Completed' THEN
+    IF OLD.batch_status <> NEW.batch_status THEN
         UPDATE Orders
-           SET order_status = 'Delivered'
+           SET order_status = NEW.batch_status
          WHERE batch_id = NEW.batch_id;
     END IF;
 
