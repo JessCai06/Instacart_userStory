@@ -135,6 +135,7 @@ CREATE TABLE Stock_Catalogue (
     aisle int  NOT NULL,
     age_restricted boolean  NOT NULL,
     promo_id text  NOT NULL,
+    store_id int  NOT NULL, 
     CONSTRAINT stock_catalogue_pk PRIMARY KEY (bar_code)
 );
 
@@ -239,6 +240,13 @@ ALTER TABLE Carted ADD CONSTRAINT Stock_Catalogue_Carted
 ALTER TABLE Stock_Catalogue ADD CONSTRAINT Stock_Catalogue_Promotion
     FOREIGN KEY (promo_id)
     REFERENCES Promotion (promo_id)  
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+-- Reference: stock_catalogue_Store (table: stock_catalogue)
+ALTER TABLE Stock_Catalogue ADD CONSTRAINT Stock_Catalogue_Store
+    FOREIGN KEY (store_id)
+    REFERENCES Store (store_id)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
