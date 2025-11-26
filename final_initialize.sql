@@ -16,6 +16,7 @@ DROP TYPE IF EXISTS Payment_Status CASCADE;
 CREATE TYPE Order_Status AS ENUM('Issued', 'Assigned', 'Picked_up', 'Shopping', 'Delivered', 'Cancelled');
 CREATE TYPE Batch_Status AS ENUM ('Unassigned','Assigned', 'In_progress', 'Completed', 'Cancelled');
 CREATE TYPE Shopping_Status AS ENUM('Available', 'Shopping', 'On_break');
+CREATE TYPE Payment_Status as ENUM('Order', 'Membership');
 
 
 \i final_create.sql

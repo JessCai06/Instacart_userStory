@@ -14,8 +14,8 @@ def update_delivery_status_trigger():
     tmpl = b'''
 DROP FUNCTION IF EXISTS fn_update_order_status() CASCADE;
 
-CREATE FUNCTION fn_update_order_status()
-RETURNS TRIGGER
+CREATE FUNCTION fn_get_shoppers_location()
+RETURNS int
 LANGUAGE plpgsql AS
 $$
 BEGIN
