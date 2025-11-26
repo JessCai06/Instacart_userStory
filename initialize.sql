@@ -11,10 +11,12 @@ CREATE database instacart;
 DROP TYPE IF EXISTS Order_Status CASCADE;
 DROP TYPE IF EXISTS Batch_Status CASCADE;
 DROP TYPE IF EXISTS Shopping_Status CASCADE;
+DROP TYPE IF EXISTS Payment_Status CASCADE;
 
 CREATE TYPE Order_Status AS ENUM('Issued', 'Assigned', 'Picked_up', 'Shopping', 'Delivered', 'Cancelled');
 CREATE TYPE Batch_Status AS ENUM ('Unassigned','Assigned', 'In_progress', 'Completed', 'Cancelled');
 CREATE TYPE Shopping_Status AS ENUM('Available', 'Shopping', 'On_break');
+CREATE TYPE Payment_Status as ENUM('Order', 'Membership');
 
 \i create.sql
 
@@ -25,3 +27,4 @@ CREATE TYPE Shopping_Status AS ENUM('Available', 'Shopping', 'On_break');
 \copy Batch(batch_id, batch_status, shopper_id) FROM data/batch.csv csv header;
 \copy Orders(order_id, tips, order_fee, order_status, store_id, batch_id) FROM data/order.csv csv header;
 
+\
