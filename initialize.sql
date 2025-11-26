@@ -26,5 +26,3 @@ CREATE TYPE Payment_Status as ENUM('Order', 'Membership');
 \copy Store(store_id, location, retail_id) FROM data/store.csv csv header;
 \copy Batch(batch_id, batch_status, shopper_id) FROM data/batch.csv csv header;
 \copy Orders(order_id, tips, order_fee, order_status, store_id, batch_id) FROM data/order.csv csv header;
-
-\
