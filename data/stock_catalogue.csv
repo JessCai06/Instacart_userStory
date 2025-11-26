@@ -1,5 +1,16 @@
 bar_code,item_name,category,brand,stock_quantity,shelf_price,aisle,age_restricted,store_id,promo_id
-B1001,Organic Apples,Produce,FreshFarm,120,2.99,A1,FALSE,1,PROMO1
-B1002,Whole Milk 2%,Dairy,MilkyWay,60,3.49,B3,FALSE,1,PROMO0
-B1003,Bourbon Whiskey,Beverages,OakBarrel,25,29.99,E1,TRUE,1,PROMO2
-B1004,Toothpaste,Personal Care,SmileBright,80,4.49,D5,FALSE,2,PROMO0
+B1001,Organic Apples,Produce,FreshFarm,120,2.99,A1,FALSE,101,PROMO1
+B1002,Whole Milk 2%,Dairy,MilkyWay,60,3.49,B3,FALSE,101,PROMO0
+B1003,Bourbon Whiskey,Beverages,OakBarrel,25,29.99,E1,TRUE,101,PROMO2
+B1004,Toothpaste,Personal Care,SmileBright,80,4.49,D5,FALSE,102,PROMO0
+B1005,Chicken Breast,Meat,HealthyMeats,50,7.99,C2,FALSE,103,PROMO1
+B1006,Gluten-Free Bread,Bakery,BakeHouse,40,5.49,A4,FALSE,102,PROMO0
+B1007,Dark Chocolate 70%,Snacks,CocoaDelight,100,2.49,E3,FALSE,101,PROMO2
+B1008,Orange Juice,Dairy,SunnySips,70,3.99,B2,FALSE,101,PROMO0
+B1009,Almonds,Nuts,HealthyNuts,150,8.99,E4,FALSE,104,PROMO1
+B1010,Gala Apples,Produce,FreshFarm,110,3.29,A1,FALSE,101,PROMO1
+B1011,Granny Smith Apples,Produce,CrispOrchard,90,2.79,A1,FALSE,103,PROMO0
+B1012,Honeycrisp Apples,Produce,PremiumGrow,75,4.49,A1,FALSE,102,PROMO2
+B1013,Whole Milk 101%,Dairy,MilkyWay,85,3.29,B3,FALSE,101,PROMO0
+B1014,Almond Milk,Dairy,PlantFlow,70,4.99,B3,FALSE,101,PROMO1
+
