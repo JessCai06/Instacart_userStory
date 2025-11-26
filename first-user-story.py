@@ -83,6 +83,8 @@ trigcommand = """
         SET batch_status = 'Completed'
       WHERE batch_id = 301;
 """
+
+
 print("\n\nTrigger: updating batch_id 301 from 'In_prorgress' to 'Completed'")
 # print(trigcommand)
 cur.execute(trigcommand)
