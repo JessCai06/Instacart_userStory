@@ -31,6 +31,7 @@ CREATE TYPE Payment_Status as ENUM('Order', 'Membership');
 \copy Member(uid, subscription_start, subscription_duration, autopay_on, has_paid) FROM data/member.csv csv header;
 \copy Nonmember(uid) FROM data/nonmember.csv csv header;
 \copy Payment(pid, amount, date, payment_method, paying_for, uid) FROM data/payment.csv csv header;
+\copy Promotion(promo_id,start_time,end_time,discount) FROM data/promotion.csv csv header;
 \copy Stock_Catalogue(bar_code,item_name,category,brand,stock_quantity,shelf_price,aisle,age_restricted,store_id,promo_id) FROM data/stock_catalogue.csv csv header;
 \copy Carted(uid, bar_code, quantity) FROM data/user_cart.csv csv header;
 \copy Purchased(bar_code, order_id, quantity) FROM data/user_purchased.csv csv header;

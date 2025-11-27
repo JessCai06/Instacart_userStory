@@ -13,4 +13,3 @@ bar_code,item_name,category,brand,stock_quantity,shelf_price,aisle,age_restricte
 1012,Honeycrisp Apples,Produce,PremiumGrow,75,4.49,7,FALSE,102,PROMO2
 1013,Whole Milk 101%,Dairy,MilkyWay,85,3.29,10,FALSE,101,PROMO0
 1014,Almond Milk,Dairy,PlantFlow,70,4.99,10,FALSE,101,PROMO1
-

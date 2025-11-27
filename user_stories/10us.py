@@ -10,23 +10,25 @@ us = '''
 
 print(us)
 
-def update_delivery_status_trigger():
+def update_delivery_status(retail):
     tmpl = b'''
 DROP FUNCTION IF EXISTS fn_update_order_status() CASCADE;
 
 CREATE FUNCTION fn_get_shoppers_location()
-RETURNS int
+RETURNS table(store text, zipcode integer, active_shoppers integer)
 LANGUAGE plpgsql AS
 $$
 BEGIN
-    -- When batch becomes completed, mark related orders as Delivered
-    IF OLD.batch_status <> NEW.batch_status THEN
-        UPDATE Orders
-           SET order_status = NEW.batch_status
-         WHERE batch_id = NEW.batch_id;
-    END IF;
-
-    RETURN NEW;
+    SELECT s.name, s.zipcode, COUNT(h.shopper_id) as active_shoppers
+      FROM Store as s
+           JOIN Retail as r ON (r.retail_id = s.retail_id)
+           JOIN Orders as o ON (s.store_id = o.store_id)
+           JOIN Batch as b ON (o.batch_id = b.batch_id)
+           JOIN Shopper as h ON (b.shopper_id = h.shopper_id)
+     WHERE (h.zipcode = s.zipcode)
+           AND (h.shopper_status = 'Available')
+           AND (s.retail_id = %s)
+     GROUP BY s.name, s.zipcode
 END;
 $$;
 
