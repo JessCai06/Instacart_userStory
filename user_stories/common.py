@@ -4,6 +4,15 @@ from prettytable import PrettyTable
 
 import re
 
+def show_this_table(table_name):
+    cmd = b'''
+        SELECT * FROM ''' + table_name.encode('utf-8') + b''';
+    '''
+    print_cmd(cmd)
+    cur.execute(cmd)
+    rows = cur.fetchall()
+    show_table(rows,get_cols_str(table_name))
+
 def c(s):
     return re.sub('\s+', ', ', s)
 
@@ -18,7 +27,6 @@ def get_cols_str(table_name: str) -> str:
     cur.execute(sql, (table_name,))
     cols = [row[0] for row in cur.fetchall()]
     return " ".join(cols)
-
 
 def show_table(rows, cols='', ncols=None):
     if ncols != None:

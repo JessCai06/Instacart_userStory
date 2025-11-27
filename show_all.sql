@@ -24,3 +24,36 @@ SELECT * FROM batch;
 SELECT * FROM orders;
 \echo
 
+\echo 'Users   - individual users who place orders'
+SELECT * FROM users;
+\echo
+
+\echo 'Member  - users who have a membership subscription'
+SELECT * FROM member;
+\echo
+
+\echo 'Nonmember - users who do not have a membership subscription'
+SELECT * FROM nonmember;
+\echo
+
+\echo 'Payment - payments made by users for orders or memberships'
+SELECT * FROM payment;
+\echo
+
+\echo 'Promotion - promotional discounts available on certain items'
+SELECT * FROM promotion;
+\echo
+
+\echo 'Stock_Catalogue - items available in stores, including pricing and promotions'
+SELECT * FROM stock_catalogue;
+\echo
+
+\echo 'Carted - items that users have added to their shopping carts'
+SELECT * FROM carted;
+\echo
+
+\echo 'Purchased - items that users have purchased in their orders'
+SELECT * FROM purchased;
+\echo
+
+\echo '------------------------------'

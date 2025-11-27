@@ -1,2 +1,6 @@
 1. refresh database: psql -d postgres -U isdb -f initialize.sql
 2. go to us07.py, run python file, should show before and after order file (firt row is diff)
+
+
+if run into an issue with 'No module named 'psycopg2''--> C:\Python314\python.exe -m pip install psycopg2-binary
+if run into an issue with ' No module named 'prettytable''--> C:\Python314\python.exe -m pip install prettytable
