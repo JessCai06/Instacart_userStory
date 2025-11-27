@@ -1,5 +1,5 @@
 pid,amount,date,payment_method,paying_for,uid
-1001,9.99,2025-01-01 00:05:00,credit_card,subscription,1
-1002,45.50,2025-01-05 14:20:00,debit_card,order,1
-1003,60.00,2025-03-16 10:00:00,credit_card,subscription,2
-1004,12.75,2025-04-02 18:45:00,cash,order,4
+1001,9.99,2025-01-01 00:05:00,credit_card,Membership,1
+1002,45.50,2025-01-05 14:20:00,debit_card,Order,1
+1003,60.00,2025-03-16 10:00:00,credit_card,Membership,2
+1004,12.75,2025-04-02 18:45:00,cash,Order,4

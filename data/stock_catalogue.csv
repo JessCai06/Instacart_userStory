@@ -1,16 +1,16 @@
-bar_code,item_name,category,brand,stock_quantity,shelf_price,aisle,age_restricted,promo_id
-1001,Organic Apples,Produce,FreshFarm,120,2.99,1,false,PROMO1
-1002,Whole Milk 2%,Dairy,MilkyWay,60,3.49,3,false,PROMO0
-1003,Bourbon Whiskey,Beverages,OakBarrel,25,29.99,5,true,PROMO2
-1004,Toothpaste,Personal Care,SmileBright,80,4.49,7,false,PROMO0
-1005,Chicken Breast,Meat,HealthyMeats,50,7.99,C2,FALSE,103,PROMO1
-1006,Gluten-Free Bread,Bakery,BakeHouse,40,5.49,A4,FALSE,102,PROMO0
-1007,Dark Chocolate 70%,Snacks,CocoaDelight,100,2.49,E3,FALSE,101,PROMO2
-1008,Orange Juice,Dairy,SunnySips,70,3.99,B2,FALSE,101,PROMO0
-1009,Almonds,Nuts,HealthyNuts,150,8.99,E4,FALSE,104,PROMO1
-1010,Gala Apples,Produce,FreshFarm,110,3.29,A1,FALSE,101,PROMO1
-1011,Granny Smith Apples,Produce,CrispOrchard,90,2.79,A1,FALSE,103,PROMO0
-1012,Honeycrisp Apples,Produce,PremiumGrow,75,4.49,A1,FALSE,102,PROMO2
-1013,Whole Milk 101%,Dairy,MilkyWay,85,3.29,B3,FALSE,101,PROMO0
-1014,Almond Milk,Dairy,PlantFlow,70,4.99,B3,FALSE,101,PROMO1
+bar_code,item_name,category,brand,stock_quantity,shelf_price,aisle,age_restricted,store_id,promo_id
+1001,Organic Apples,Produce,FreshFarm,120,2.99,1,false,102,PROMO1
+1002,Whole Milk 2%,Dairy,MilkyWay,60,3.49,3,false,104,PROMO0
+1003,Bourbon Whiskey,Beverages,OakBarrel,25,29.99,5,true,103,PROMO2
+1004,Toothpaste,Personal Care,SmileBright,80,4.49,7,false,103,PROMO0
+1005,Chicken Breast,Meat,HealthyMeats,50,7.99,4,FALSE,103,PROMO1
+1006,Gluten-Free Bread,Bakery,BakeHouse,40,5.49,8,FALSE,102,PROMO0
+1007,Dark Chocolate 70%,Snacks,CocoaDelight,100,2.49,5,FALSE,101,PROMO2
+1008,Orange Juice,Dairy,SunnySips,70,3.99,5,FALSE,101,PROMO0
+1009,Almonds,Nuts,HealthyNuts,150,8.99,12,FALSE,104,PROMO1
+1010,Gala Apples,Produce,FreshFarm,110,3.29,2,FALSE,101,PROMO1
+1011,Granny Smith Apples,Produce,CrispOrchard,90,2.79,1,FALSE,103,PROMO0
+1012,Honeycrisp Apples,Produce,PremiumGrow,75,4.49,7,FALSE,102,PROMO2
+1013,Whole Milk 101%,Dairy,MilkyWay,85,3.29,10,FALSE,101,PROMO0
+1014,Almond Milk,Dairy,PlantFlow,70,4.99,10,FALSE,101,PROMO1
 

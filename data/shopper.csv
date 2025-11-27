@@ -1,7 +1,7 @@
-shopper_id,shopping_status
-201,Available
-202,Shopping
-203,On_break
-204,Available
-205,Shopping
-206,Available
+shopper_id,shopping_status,zipcode
+201,Available,15213
+202,Shopping,15232
+203,On_break,15219
+204,Available,15213
+205,Shopping,15219
+206,Available,15232

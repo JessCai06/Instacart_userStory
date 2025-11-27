@@ -1,5 +1,5 @@
-store_id,location,retail_id
-101,"Pittsburgh - Shadyside",3
-102,"Pittsburgh - East Liberty",2
-103,"Pittsburgh - Waterfront",1
-104,"Pittsburgh - Oakland",2
+store_id,location,retail_id,zipcode
+101,"Pittsburgh - Shadyside",3,15213
+102,"Pittsburgh - East Liberty",2,15213
+103,"Pittsburgh - Waterfront",1,15219
+104,"Pittsburgh - Oakland",2,15232
