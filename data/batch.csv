@@ -4,3 +4,4 @@ batch_id,batch_status,shopper_id
 303,Completed,201
 304,Cancelled,203
 305,Assigned,204
+306,In_progress,202

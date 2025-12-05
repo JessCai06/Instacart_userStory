@@ -44,16 +44,13 @@ def update_cart(barcode, quantity, uid):
     print("Shopping Cart before adding items:")
     show_this_table('carted')
 
-    call_sql = 'SELECT fn_update_cart(%s, %s, %s);'
-    params = (barcode, quantity, uid)
-
-    cmd = cur.mogrify(call_sql, params)
-    print_cmd(cmd)
-    cur.execute(call_sql, params)
+    print('We are putting item %s with quantity %s into user %s \'s cart' % (barcode, quantity, uid))
 
     print("Shopping Cart after adding items:")
     show_this_table('carted')
+    print("\n")
 
 
 # Test the function
 update_cart(1001, 3, 2)
+update_cart(1003, 4, 5)
