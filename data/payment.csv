@@ -3,3 +3,5 @@ pid,amount,date,payment_method,paying_for,uid
 1002,45.50,2025-01-05 14:20:00,debit_card,Order,1
 1003,60.00,2025-03-16 10:00:00,credit_card,Membership,2
 1004,12.75,2025-04-02 18:45:00,cash,Order,4
+1005,15.00,2025-05-03 12:30:00,credit_card,Order,5
+1006,9.99,2025-05-01 09:00:00,credit_card,Membership,3
