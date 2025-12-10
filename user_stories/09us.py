@@ -1,27 +1,25 @@
 from common import *
 
 us = '''
-* Complex Analytical US09: See average time
-    As an instacart Manager, I want to see the average time that it took for 
-    shoppers to fulfill assigned batches of 1, 2 or 3 orders so that I would 
-    know when it is better for Instacart to have one shopper shop for multiple 
-    orders, and when it is better to have multiple shoppers only shop for one order
+* Complex Analytical US09: See average sales by category
+    As a grocery store manager, I want to which category is the most purchased, so that I would know what to prioritize when I display items on the store website.
 '''
 
 print(us)
 
-def list_price_desc(search_term):
+def sales_by_category():
     tmpl =  '''
-   
+        SELECT DISTINCT c.category, AVG(p.quantity) over wd as avg
+          FROM Purchased as p
+               JOIN stock_catalogue as c ON (p.bar_code = c.bar_code)
+        WINDOW wd as (PARTITION BY c.category)
+         ORDER BY avg DESC
     
 '''
-    param = ('%' + search_term + '%',)
-    cmd = cur.mogrify(tmpl, param)
+    cmd = cur.mogrify(tmpl)
     print_cmd(cmd)
-    cur.execute(tmpl, param)
+    cur.execute(tmpl)
     rows = cur.fetchall()
     show_table(rows)
 
-list_price_desc("Apple")    
-list_price_desc("milk")    
-
+sales_by_category()
