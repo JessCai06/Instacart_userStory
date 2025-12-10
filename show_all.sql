@@ -1,5 +1,5 @@
 -- Connect to your project database (grader runs from postgres)
-\c instacart
+\c project
 
 \echo
 \echo 'show all below ---------------'

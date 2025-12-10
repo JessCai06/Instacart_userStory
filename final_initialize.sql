@@ -7,6 +7,7 @@ SET datestyle = 'ISO, MDY';
 CREATE database project;
 \c project
 
+
 DROP TYPE IF EXISTS Order_Status CASCADE;
 DROP TYPE IF EXISTS Batch_Status CASCADE;
 DROP TYPE IF EXISTS Shopping_Status CASCADE;
@@ -18,7 +19,7 @@ CREATE TYPE Shopping_Status AS ENUM('Available', 'Shopping', 'On_break');
 CREATE TYPE Payment_Status as ENUM('Order', 'Membership');
 
 
-\i create.sql
+\i final_create.sql
 
 
 \copy Retail(retail_id, name) FROM data/retail.csv csv header;
