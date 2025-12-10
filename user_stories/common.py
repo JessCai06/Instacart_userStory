@@ -43,7 +43,7 @@ def print_cmd(cmd):
     if SHOW_CMD:
         print(cmd.decode('utf-8'))
 
-conn = psycopg2.connect(database='instacart', user='isdb')
+conn = psycopg2.connect(database='project', user='isdb')
 conn.autocommit = True
 cur = conn.cursor()
 
