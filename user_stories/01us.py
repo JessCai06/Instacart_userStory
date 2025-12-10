@@ -3,8 +3,7 @@ from common import *
 us = '''
 * Simple Analytical US01: Order results
 
-   As a user, I want to be able to order my search results by price from low to high across different grocery stores
-So that I can choose the best store option and spend less
+   As a user, I want to be able to order my search results by price from low to high across different grocery stores, so that I can choose the best store option and spend less.
 '''
 
 print(us)

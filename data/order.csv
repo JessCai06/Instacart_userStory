@@ -13,3 +13,4 @@ order_id,tips,order_fee,order_status,store_id,batch_id,uid
 412,1.75,6.99,Issued,102,305,3
 413,0.00,5.49,Shopping,103,306,2
 414,2.25,7.99,Delivered,104,306,4
+415,0.00,7.99,Issued,103,307,1
