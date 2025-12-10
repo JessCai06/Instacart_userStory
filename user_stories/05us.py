@@ -21,7 +21,8 @@ def track_shopper_progress(order_id):
     print_cmd(cmd)
     cur.execute(tmpl, (order_id,))
     rows = cur.fetchall()
-    show_table(rows)
+    cols = 'h.shopping_status'
+    show_table(rows, cols)
 
 track_shopper_progress(401)
 track_shopper_progress(403)

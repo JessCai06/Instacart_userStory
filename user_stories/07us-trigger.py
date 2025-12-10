@@ -19,9 +19,9 @@ LANGUAGE plpgsql AS
 $$
 BEGIN
     -- When batch becomes completed, mark related orders as Delivered
-    IF OLD.batch_status <> NEW.batch_status THEN
+    IF OLD.batch_status <> 'Completed' AND NEW.batch_status = 'Completed' THEN
         UPDATE Orders
-           SET order_status = NEW.batch_status
+           SET order_status = 'Delivered'
          WHERE batch_id = NEW.batch_id;
     END IF;
 
@@ -63,7 +63,7 @@ cur.connection.commit()
 # testing our trigger
 update_delivery_status_trigger()
 
-cols_str = 'order_id tips order_fee order_status store_id batch_id'
+cols_str = 'order_id tips order_fee order_status store_id batch_id uid'
 cols_strr = 'batch_id batch_status shopper_id'
 
 

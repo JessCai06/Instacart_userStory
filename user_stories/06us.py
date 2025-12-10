@@ -30,4 +30,22 @@ def add_coupon(bar_code, promo):
     print_cmd(cmd)
     cur.execute(tmpl, params)
 
+
+
+# testing the update
+
+cols_strr = 'bar_code item_name category brand stock_quantity shelf_price aisle age_restricted store_id promo_id'
+
+add_coupon(1002, "PROMO0")
+
+print("\n\nstock_catalogue BEFORE")
+cur.execute("SELECT * FROM stock_catalogue")
+rows_before = cur.fetchall()
+show_table(rows_before, cols_strr)
+
 add_coupon(1002, "PROMO1")
+
+print("\n\nstock_catalogue AFTER")
+cur.execute("SELECT * FROM stock_catalogue")
+rows_after = cur.fetchall()
+show_table(rows_after, cols_strr)

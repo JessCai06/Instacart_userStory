@@ -21,7 +21,8 @@ def list_price_desc(search_term):
     print_cmd(cmd)
     cur.execute(tmpl, param)
     rows = cur.fetchall()
-    show_table(rows)
+    cols = 'item_name shelf_price store_id'
+    show_table(rows, cols)
 
 list_price_desc("Apple")    
 list_price_desc("milk")    

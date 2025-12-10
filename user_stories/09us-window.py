@@ -2,7 +2,7 @@ from common import *
 
 us = '''
 * Complex Analytical US09: See average sales by category
-    As a grocery store manager, I want to which category is the most purchased, so that I would know what to prioritize when I display items on the store website.
+    As a grocery store staff, I want to see which category is the most purchased, so that I would know what to prioritize when I display items on the store website.
 '''
 
 print(us)
@@ -20,6 +20,7 @@ def sales_by_category():
     print_cmd(cmd)
     cur.execute(tmpl)
     rows = cur.fetchall()
-    show_table(rows)
+    cols = 'c.category avg'
+    show_table(rows, cols)
 
 sales_by_category()

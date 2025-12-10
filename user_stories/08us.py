@@ -26,6 +26,7 @@ def list_popular_items(limit):
     print_cmd(cmd)
     cur.execute(tmpl, params)
     rows = cur.fetchall()
-    show_table(rows)
+    cols = 'c.bar_code c.item_name times_purchased'
+    show_table(rows, cols)
 
 list_popular_items(2)
