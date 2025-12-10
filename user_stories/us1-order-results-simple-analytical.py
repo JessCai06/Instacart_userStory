@@ -24,6 +24,9 @@ def list_price_desc(search_term):
     cols = 'item_name shelf_price store_id'
     show_table(rows, cols)
 
-list_price_desc("Apple")    
+print('------------------------TEST CASE 1----------------------------')
+list_price_desc("Apple")   
+print('------------------------TEST CASE 2----------------------------')
+print("\nListing prices for 'milk':")
 list_price_desc("milk")    
 

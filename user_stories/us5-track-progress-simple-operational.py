@@ -23,7 +23,8 @@ def track_shopper_progress(order_id):
     rows = cur.fetchall()
     cols = 'h.shopping_status'
     show_table(rows, cols)
-
+print('------------------------TEST CASE 1----------------------------')
 track_shopper_progress(401)
+print('------------------------TEST CASE 2----------------------------')
 track_shopper_progress(403)
 

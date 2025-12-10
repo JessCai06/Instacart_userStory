@@ -52,5 +52,7 @@ def update_cart(barcode, quantity, uid):
 
 
 # Test the function
+print('------------------------TEST CASE 1----------------------------')
 update_cart(1001, 3, 2)
+print('------------------------TEST CASE 2----------------------------')
 update_cart(1003, 4, 5)
